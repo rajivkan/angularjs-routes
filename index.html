@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<!-- define angular app -->
+<html ng-app="testApp">
+
+<head>
+  <!-- Angularjs libs -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<!-- define angular controller -->
+<body ng-controller="mainController">
+
+  <table style="width:100%">
+    <tr>
+        <td style="width:200px; padding-top:25px" valign="top">
+
+          <li><a href="#">Home</a></li><br>
+          <li><a href="#template1">Template 1</a></li><br>
+          <li><a href="#template2">Template 2</a></li>
+        </td>
+          
+        <td valign="top">
+
+          <div id="main">
+          <!-- angular templating -->
+          <!-- this is where content will be injected -->
+          <div ng-view></div>
+        </div>
+        </td>
+    </tr>
+  </table>
+
+
+  
+</body>
+
+</html>
