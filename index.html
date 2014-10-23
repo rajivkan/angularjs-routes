@@ -15,11 +15,13 @@
 
   <table style="width:100%">
     <tr>
-        <td style="width:200px; padding-top:25px" valign="top">
-
-          <li><a href="#">Home</a></li><br>
+        <td style="width:200px; padding-top:25px" valign="top" ng-controller="menuController">
+          <li ng-repeat="x in names">
+            <a href="#">{{x.name}}</a>
+          </li><br>
+          <!-- <li><a href="#">Home</a></li><br>
           <li><a href="#template1">Template 1</a></li><br>
-          <li><a href="#template2">Template 2</a></li>
+          <li><a href="#template2">Template 2</a></li> -->
         </td>
           
         <td valign="top">

@@ -35,3 +35,12 @@
 	testApp.controller('template2Controller', function($scope) {
 		$scope.message = 'Template 2 content';
 	});
+
+	
+	function menuController($scope) {
+	    $scope.names = [
+	        {name:'Home'},
+	        {name:'Template 1'},
+	        {name:'Template 2'}
+	    ];
+	}
