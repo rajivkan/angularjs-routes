@@ -5,19 +5,19 @@
 	testApp.config(function($routeProvider) {
 		// route for the home
 		$routeProvider.when('/', {
-			templateUrl : 'pages/home.html',
+			templateUrl : 'templates/home.html',
 			controller  : 'mainController'
 		})
 
 		// route for the template1
 		$routeProvider.when('/template1', {
-			templateUrl : 'pages/template1.html',
+			templateUrl : 'templates/template1.html',
 			controller  : 'template1Controller'
 		})
 
 		// route for the template1
 		$routeProvider.when('/template2', {
-			templateUrl : 'pages/template2.html',
+			templateUrl : 'templates/template2.html',
 			controller  : 'template1Controller'
 		});
 	});
