@@ -39,8 +39,8 @@
 	
 	function menuController($scope) {
 	    $scope.names = [
-	        {name:'Home'},
-	        {name:'Template 1'},
-	        {name:'Template 2'}
+	        {name:'Home', route:'#'},
+	        {name:'Template 1', route:'#template1'},
+	        {name:'Template 2', route:'#template2'}
 	    ];
 	}
