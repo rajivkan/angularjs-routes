@@ -1,0 +1,9 @@
+{
+	"name": "Rajiv",
+	"background": "#ff00ff",
+	"background2": "#00ffff",
+	"address": [
+		{"city":"Bangalore"},
+		{"city": "Delhi"}
+	]
+}

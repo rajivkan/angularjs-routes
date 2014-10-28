@@ -2,4 +2,71 @@
 	<h1>Template 2</h1>
 	
 	<p>{{ message }}</p>
+
+	<div ng-controller="MyController" >
+	    <div ng-switch on="myData.switch">
+	        <div ng-switch-when="1">Shown when switch is 1</div>
+	        <div ng-switch-when="2">Shown when switch is 2</div>
+	        <div ng-switch-default>Shown when switch is anything else than 1 and 2</div>
+	    </div>
+
+
+	    <div ng-if="myData.showIt">ng-if Show it</div>
+
+	    <span ng-show="myData.showIt">Show</span>
+      <span ng-hide="myData.showIt">Hide</span>
+
+
+
+      <ol>
+	   <li ng-repeat="(name, value) in myData.myObject">{{name}} = {{value}}</li>
+	</ol>
+
+
+	<ol>
+	    <li ng-repeat-start="(name, value) in myData.myObject">{{name}}</li>
+	    <li ng-repeat-end>{{value | limitTo: 2 | uppercase}}</li>
+	</ol>
+
+
+
+	<ol>
+		<input type="text" ng-model="filterArray">
+    <li ng-click="myData.doClick(item, $event)" ng-repeat="item in filteredItems = ( myData.items | filter:filterArray) ">
+        {{item.text}}
+    </li>
+	</ol>
+	<div>{{filteredItems.length}}</div>
+
+
+<p>Click Event</p>
+<div ng-controller="MyController" >
+    <div ng-click="myData.doClick2($event)">Click here</div>
+</div>
+
+	</div>
+
+
+<br><br><br><br>
+<span>New Controller </span>
+	<div ng-controller="myController2">
+    {{data.time}}
+
+    <br/>
+    <button ng-click="updateTime()">update time - ng-click</button>
+    <button id="updateTimeButton"  >update time</button>
+</div>
+
+
+<br><br><br><br>
+<span>Ajax Call </span>
+	<div ng-controller="myController3" id="div1">
+    {{data.name}}
+    <ol style="background:{{data.background2}}">
+    	<li ng-repeat="item in data.address">{{item.city}}</li>
+    </ol>
+    <br/>
+</div>
+
+
 </div>

@@ -44,3 +44,52 @@
 	        {name:'Template 2', route:'#template2'}
 	    ];
 	}
+
+	function MyController($scope) {
+	    $scope.myData = {};
+	    $scope.myData.switch = 3;
+	    $scope.myData.showIt = true;
+
+	    $scope.myData.myObject = { var1 : "val1", var2 : "val3", var3 : "val3"};
+
+
+	    $scope.myData.items    = [ {text : "one"}, {text : "two"}, {text : "three"}, {text : "four"} ];
+        $scope.sortField = "text";
+        $scope.reverse   = true;
+
+        $scope.myData.doClick = function(item, event) {
+            alert("clicked: " + item.text + " @ " + event.clientX + ": " + event.clientY);
+        }
+
+        $scope.myData.doClick2 = function(event) {
+            alert("clicked: " + event.clientX + ", " + event.clientY);
+        }
+	};
+
+
+
+	var myController2 = function($scope) {
+        $scope.data = { time : new Date() };
+
+        $scope.updateTime = function() {
+            $scope.data.time = new Date();
+        }
+
+        document.getElementById("updateTimeButton")
+                .addEventListener('click', function() {
+            console.log("update time clicked");
+            alert(""+$scope.data.time);
+        });
+    };
+
+testApp.controller('myController3', ['$scope','$http', function($scope,$http) {
+      var responsePromise = $http.get("data.json");
+	        responsePromise.success(function(data, status, headers, config) {
+	        	$scope.data = data;
+	        	document.getElementById("div1").style.background = data.background;
+	            //$scope.myData.fromServer = data.title;
+	        });
+	        responsePromise.error(function(data, status, headers, config) {
+	            //alert("failed!");
+	        });
+}]);
