@@ -26,7 +26,18 @@
 	testApp.controller('mainController', function($scope) {
 		// create a message to display in our view
 		$scope.message = 'Home content';
-	});
+		// $scope.employee = {
+	 //      name: 'Rajiv',
+	 //      address: 'Bangalore'
+	 //    };
+	})
+	// .directive('myEmployee', function() {
+ //    return {
+ //      template: 'Name: {{employee.name}} Address: {{employee.address}}'
+ //      // restrict: 'E',
+ //      // templateUrl: 'templates/employee.html'
+ //    };
+ //  });
 
 	testApp.controller('template1Controller', function($scope) {
 		$scope.message = 'Template 1 content';
@@ -43,6 +54,8 @@
 	        {name:'Template 1', route:'#template1'},
 	        {name:'Template 2', route:'#template2'}
 	    ];
+
+	    
 	}
 
 	function MyController($scope) {

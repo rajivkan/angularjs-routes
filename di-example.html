@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<!-- define angular app -->
+<html ng-app="myApp">
+
+<head>
+  <!-- Angularjs libs -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+  <script type="text/javascript">
+  	var myMod = angular.module('myApp', []);
+
+	myMod.provider('getUser', function() {
+	  var text = 'Hello, ';
+	      
+	  this.setText = function(value) {
+	    text = value;
+	  };
+	      
+	  this.$get = function() {
+	    return function(name) {
+	      alert(text + name);
+	    };
+	  };
+	});
+
+	myMod.config(function(getUserProvider) {
+	  getUserProvider.setText("Hi, ");
+	});
+	var __getUser;
+	myMod.run(function(getUser) {
+	  //getUser('Rajiv');
+	  __getUser = getUser;
+	});
+
+  </script>
+</head>
+<body>
+	<div ng-app="myApp">
+		<input type="text" placeholder="Enter Name" id="txt"> <input id="btn" value="Click Me" type="button" onclick="__getUser(txt.value)">
+	</div>
+</body>
+</html>
